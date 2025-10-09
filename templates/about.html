@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Blood Cell Diagnostics</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='logo.svg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="{{ url_for('static', filename='logo.svg') }}" alt="Blood Cell Diagnostics" class="logo-img">
+                    <span class="logo-text">Blood Cell Diagnostics</span>
+                </div>
+                <nav class="nav">
+                    <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+                    <a href="{{ url_for('about') }}" class="nav-link active">About</a>
+                    <a href="mailto:mahmoudaymann153@gmail.com" class="contact-btn">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">About Blood Cell Diagnostics</h1>
+                    <p class="hero-subtitle">Advanced AI-powered blood cell classification system for medical research and education</p>
+                </div>
+            </section>
+
+            <!-- Project Overview -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Project Overview</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="section-content">
+                    <p class="lead-text">
+                        Blood Cell Diagnostics is a cutting-edge web application that leverages artificial intelligence to automatically classify different types of blood cells. Built with modern web technologies and powered by deep learning, this system provides accurate, fast, and reliable blood cell identification for medical professionals, researchers, and students.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">8</div>
+                            <div class="stat-label">Cell Types</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">17,000+</div>
+                            <div class="stat-label">Training Images</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">95%+</div>
+                            <div class="stat-label">Accuracy</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">&lt;50ms</div>
+                            <div class="stat-label">Inference Time</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technology Stack -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Technology Stack</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="section-content">
+                    <div class="tech-grid">
+                        <div class="tech-category">
+                            <h3>Backend & AI</h3>
+                            <div class="tech-items">
+                                <div class="tech-item">
+                                    <span class="tech-name">Python</span>
+                                    <span class="tech-desc">Core programming language</span>
+                                </div>
+                                <div class="tech-item">
+                                    <span class="tech-name">Flask</span>
+                                    <span class="tech-desc">Web framework</span>
+                                </div>
+                                <div class="tech-item">
+                                    <span class="tech-name">PyTorch</span>
+                                    <span class="tech-desc">Deep learning framework</span>
+                                </div>
+                                <div class="tech-item">
+                                    <span class="tech-name">PIL (Pillow)</span>
+                                    <span class="tech-desc">Image processing</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tech-category">
+                            <h3>Frontend</h3>
+                            <div class="tech-items">
+                                <div class="tech-item">
+                                    <span class="tech-name">HTML5</span>
+                                    <span class="tech-desc">Markup structure</span>
+                                </div>
+                                <div class="tech-item">
+                                    <span class="tech-name">CSS3</span>
+                                    <span class="tech-desc">Styling & layout</span>
+                                </div>
+                                <div class="tech-item">
+                                    <span class="tech-name">JavaScript</span>
+                                    <span class="tech-desc">Interactive features</span>
+                                </div>
+                                <div class="tech-item">
+                                    <span class="tech-name">SVG</span>
+                                    <span class="tech-desc">Vector graphics</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tech-category">
+                            <h3>Deployment</h3>
+                            <div class="tech-items">
+                                <div class="tech-item">
+                                    <span class="tech-name">Railway</span>
+                                    <span class="tech-desc">Cloud hosting</span>
+                                </div>
+                                <div class="tech-item">
+                                    <span class="tech-name">GitHub</span>
+                                    <span class="tech-desc">Version control</span>
+                                </div>
+                                <div class="tech-item">
+                                    <span class="tech-name">Docker</span>
+                                    <span class="tech-desc">Containerization</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Key Features</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="section-content">
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">🔬</div>
+                            <h3>AI-Powered Classification</h3>
+                            <p>Advanced CNN model trained on 17,000+ blood cell images for accurate classification of 8 different cell types.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">⚡</div>
+                            <h3>Real-Time Processing</h3>
+                            <p>Lightning-fast inference with sub-50ms processing time, providing instant results for medical professionals.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🎯</div>
+                            <h3>High Accuracy</h3>
+                            <p>State-of-the-art accuracy rates exceeding 95% for reliable medical diagnosis and research applications.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔒</div>
+                            <h3>Privacy-First</h3>
+                            <p>All processing happens in-memory with no image storage, ensuring complete patient data privacy.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📱</div>
+                            <h3>Responsive Design</h3>
+                            <p>Professional, mobile-friendly interface that works seamlessly across all devices and screen sizes.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📊</div>
+                            <h3>Detailed Analytics</h3>
+                            <p>Comprehensive confidence scores and detailed breakdowns for each blood cell type classification.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Blood Cell Types -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Supported Blood Cell Types</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="section-content">
+                    <div class="cell-types-grid">
+                        <div class="cell-type-card">
+                            <div class="cell-type-name">Basophil</div>
+                            <div class="cell-type-desc">Allergic reactions and immune responses</div>
+                        </div>
+                        <div class="cell-type-card">
+                            <div class="cell-type-name">Eosinophil</div>
+                            <div class="cell-type-desc">Parasite defense and allergic responses</div>
+                        </div>
+                        <div class="cell-type-card">
+                            <div class="cell-type-name">Erythroblast</div>
+                            <div class="cell-type-desc">Immature red blood cell precursor</div>
+                        </div>
+                        <div class="cell-type-card">
+                            <div class="cell-type-name">Immature Granulocyte</div>
+                            <div class="cell-type-desc">Developing white blood cell</div>
+                        </div>
+                        <div class="cell-type-card">
+                            <div class="cell-type-name">Lymphocyte</div>
+                            <div class="cell-type-desc">Adaptive immune system cells</div>
+                        </div>
+                        <div class="cell-type-card">
+                            <div class="cell-type-name">Monocyte</div>
+                            <div class="cell-type-desc">Phagocytic immune cells</div>
+                        </div>
+                        <div class="cell-type-card">
+                            <div class="cell-type-name">Neutrophil</div>
+                            <div class="cell-type-desc">Primary bacterial defense cells</div>
+                        </div>
+                        <div class="cell-type-card">
+                            <div class="cell-type-name">Platelet</div>
+                            <div class="cell-type-desc">Blood clotting and wound healing</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Use Cases -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Use Cases</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="section-content">
+                    <div class="use-cases-grid">
+                        <div class="use-case-card">
+                            <h3>Medical Education</h3>
+                            <p>Interactive learning tool for medical students and professionals to study blood cell morphology and classification.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <h3>Research Applications</h3>
+                            <p>Supporting medical research with automated blood cell counting and classification for large-scale studies.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <h3>Clinical Support</h3>
+                            <p>Assisting healthcare professionals with preliminary blood cell identification and analysis.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <h3>Quality Control</h3>
+                            <p>Validating laboratory results and ensuring consistency in blood cell analysis procedures.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Development Team -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Development Team</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="section-content">
+                    <div class="team-info">
+                        <p class="team-description">
+                            This project was developed as part of an Advanced AI & Machine Learning Diploma program at <strong>AMIT LEARNING</strong>, 
+                            under the expert guidance of <strong>George Samuel</strong>. The comprehensive curriculum and hands-on approach 
+                            provided the perfect foundation for creating this practical application of computer vision and deep learning in healthcare.
+                        </p>
+                        <div class="team-highlights">
+                            <div class="highlight-item">
+                                <strong>Educational Institution:</strong> AMIT LEARNING
+                            </div>
+                            <div class="highlight-item">
+                                <strong>Instructor:</strong> George Samuel
+                            </div>
+                            <div class="highlight-item">
+                                <strong>Course:</strong> Advanced AI & Machine Learning Diploma
+                            </div>
+                            <div class="highlight-item">
+                                <strong>Specialization:</strong> Computer Vision & Deep Learning
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Specifications -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Technical Specifications</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="section-content">
+                    <div class="specs-grid">
+                        <div class="spec-category">
+                            <h3>Model Architecture</h3>
+                            <ul class="spec-list">
+                                <li>Custom CNN with 3 convolutional blocks</li>
+                                <li>Input: RGB images (128×128 pixels)</li>
+                                <li>Output: 8-class softmax classification</li>
+                                <li>Lightweight design for fast inference</li>
+                            </ul>
+                        </div>
+                        <div class="spec-category">
+                            <h3>Performance</h3>
+                            <ul class="spec-list">
+                                <li>Inference time: &lt;50ms on CPU</li>
+                                <li>Memory usage: &lt;100MB</li>
+                                <li>Accuracy: 95%+ on test dataset</li>
+                                <li>Concurrent users: 100+</li>
+                            </ul>
+                        </div>
+                        <div class="spec-category">
+                            <h3>Data Requirements</h3>
+                            <ul class="spec-list">
+                                <li>Image format: JPG, PNG, WebP</li>
+                                <li>Image size: Any (auto-resized to 128×128)</li>
+                                <li>Color space: RGB</li>
+                                <li>File size: &lt;10MB per image</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact & Support -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Contact & Support</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="section-content">
+                    <div class="contact-info">
+                        <p class="contact-description">
+                            For questions, feedback, or collaboration opportunities, please don't hesitate to reach out.
+                        </p>
+                        <div class="contact-methods">
+                            <a href="mailto:mahmoudaymann153@gmail.com" class="contact-method">
+                                <span class="contact-icon">📧</span>
+                                <span class="contact-text">mahmoudaymann153@gmail.com</span>
+                            </a>
+                            <a href="https://github.com/mahmoud-aymann" class="contact-method" target="_blank">
+                                <span class="contact-icon">🐙</span>
+                                <span class="contact-text">GitHub Profile</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <img src="{{ url_for('static', filename='logo.svg') }}" alt="Blood Cell Diagnostics" class="footer-logo-img">
+                        <span class="footer-logo-text">Blood Cell Diagnostics</span>
+                    </div>
+                    <p class="footer-description">Advanced AI-powered blood cell classification for medical research and education.</p>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-links">
+                        <a href="{{ url_for('index') }}" class="footer-link">Home</a>
+                        <a href="{{ url_for('about') }}" class="footer-link">About</a>
+                        <a href="mailto:mahmoudaymann153@gmail.com" class="footer-link">Contact</a>
+                    </div>
+                    <div class="footer-copyright">
+                        <p>&copy; 2024 Blood Cell Diagnostics. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

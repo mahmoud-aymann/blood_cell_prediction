@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blood Cell Diagnostics</title>
+    <meta name="description" content="AI-powered hematology image classification for common blood cell types.">
+    <link rel="icon" href="{{ url_for('static', filename='logo.svg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <img class="logo-img" src="{{ url_for('static', filename='logo.svg') }}" alt="Logo" />
+          <div class="brand-text">
+            <h1>Blood Cell Diagnostics</h1>
+            <p>AI-powered hematology image classification</p>
+          </div>
+        </div>
+        <nav class="top-nav">
+          <a href="{{ url_for('about') }}">About</a>
+          <a href="#privacy">Privacy</a>
+          <a href="mailto:mahmoudaymann153@gmail.com" class="contact-link">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <div class="flash" role="alert">
+        {% for message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% endwith %}
+
+      {% if not model_ready %}
+        <div class="warning">Model is not loaded. Please provide <code>cnn_model.pth</code> correctly.</div>
+      {% endif %}
+
+      <section class="hero">
+        <div class="hero-card">
+          <h2>Upload a Blood Smear Image</h2>
+          <p class="muted">JPG/PNG supported. We do not store your data.</p>
+
+          <form class="uploader" action="{{ url_for('predict') }}" method="post" enctype="multipart/form-data">
+            <input id="image" class="file-input" type="file" name="image" accept="image/*" required multiple>
+            <div id="dropzone" class="dropzone" tabindex="0" aria-label="Upload dropzone">
+              <div class="dz-icon">⬆</div>
+              <div>
+                Drag & drop an image here or
+                <button type="button" class="link" id="browseBtn">Browse files</button>
+              </div>
+              <div class="hint">Up to 10 MB</div>
+            </div>
+            <div id="thumbs" class="thumbs" aria-live="polite"></div>
+            <div id="preview" class="preview hidden">
+              <img id="previewImg" alt="Image preview" />
+              <div class="meta">
+                <span id="fileName"></span>
+                <span id="fileSize" class="muted"></span>
+              </div>
+            </div>
+            <div class="actions">
+              <button id="submitBtn" type="submit" disabled>Run Prediction</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="grid-2">
+          <div class="card">
+            <h3>High Reliability</h3>
+            <p class="muted">Model trained on a curated blood‑cell dataset to classify common cell types: basophil, eosinophil, erythroblast, immature granulocyte (ig), lymphocyte, monocyte, neutrophil, and platelet.</p>
+            <div class="kv-list" style="margin-top:10px">
+              <div class="kv-row"><span class="kv-key">Architecture</span><span class="kv-val">Lightweight CNN (3 conv blocks)</span></div>
+              <div class="kv-row"><span class="kv-key">Input</span><span class="kv-val">RGB 128×128</span></div>
+              <div class="kv-row"><span class="kv-key">Latency</span><span class="kv-val">~10–40 ms on CPU (typical)</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Evaluation & Use</h3>
+            <p class="muted">This tool is intended for research and educational use. Predictions should be reviewed by qualified professionals before any decision‑making.</p>
+            <div class="kv-list" style="margin-top:10px">
+              <div class="kv-row"><span class="kv-key">Confidence</span><span class="kv-val">Softmax score for each class</span></div>
+              <div class="kv-row"><span class="kv-key">Top‑1 output</span><span class="kv-val">Shown with detailed class scores</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="privacy" class="about" style="margin-top:16px">
+        <div class="grid-2">
+          <div class="card">
+            <h3>Privacy Policy</h3>
+            <p class="muted">We take data protection seriously. By default, the app processes your image in memory and does not persist it to disk or any external service.</p>
+            <div class="kv-list" style="margin-top:10px">
+              <div class="kv-row"><span class="kv-key">Collection</span><span class="kv-val">Uploaded image only</span></div>
+              <div class="kv-row"><span class="kv-key">Storage</span><span class="kv-val">No image storage after prediction</span></div>
+              <div class="kv-row"><span class="kv-key">Logging</span><span class="kv-val">No content logging; minimal technical logs</span></div>
+              <div class="kv-row"><span class="kv-key">Retention</span><span class="kv-val">None for images</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="privacy">
+      <div class="container">
+        <small>Model file: {{ config.MODEL_PATH if config and config.MODEL_PATH else 'cnn_model.pth' }} · Contact: <a href="mailto:mahmoudaymann153@gmail.com">mahmoudaymann153@gmail.com</a></small>
+      </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='ui.js') }}"></script>
+  </body>
+  </html>
+
+

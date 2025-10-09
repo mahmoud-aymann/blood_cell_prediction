@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <header class="site-header small">
+      <div class="container header-inner">
+        <div class="brand">
+          <img class="logo-img" src="{{ url_for('static', filename='logo.svg') }}" alt="Logo" />
+          <div class="brand-text">
+            <h1>Prediction Result</h1>
+          </div>
+        </div>
+        <nav class="top-nav">
+          <a href="{{ url_for('index') }}">Back</a>
+          <a href="{{ url_for('about') }}">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+
+      <div class="grid">
+        <div class="card">
+          <div class="image-frame">
+            <img src="data:image/png;base64,{{ preview_b64 }}" alt="Preview image" class="result-preview" id="zoomImg" />
+          </div>
+          <div class="zoom-controls">
+            <button class="button" id="zoomIn" type="button">Zoom in</button>
+            <button class="button" id="zoomOut" type="button">Zoom out</button>
+            <button class="button" id="zoomReset" type="button">Reset</button>
+          </div>
+        </div>
+        <div class="card">
+          <h2>{{ predicted_label }}</h2>
+          <p>Confidence: {{ '%.2f'|format(predicted_confidence * 100) }}%</p>
+
+          <h3>Prediction Details</h3>
+          <ul class="pred-list bars">
+            {% for label, prob in predictions %}
+              <li>
+                <div class="bar">
+                  <div class="bar-fill" style="width: {{ (prob * 100)|round(2) }}%"></div>
+                  <div class="bar-labels">
+                    <span>{{ label }}</span>
+                    <span>{{ '%.2f'|format(prob * 100) }}%</span>
+                  </div>
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+          <div class="share-actions">
+            <button class="button" id="copyResult" type="button">Copy result</button>
+            <button class="button" id="printResult" type="button">Print / PDF</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="button" href="{{ url_for('index') }}">Try another image</a>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='result.js') }}"></script>
+  </body>
+  </html>
+
+
