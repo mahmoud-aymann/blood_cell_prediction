@@ -47,10 +47,10 @@ Upload any blood smear image and get instant AI-powered classification results!
 ## 📸 Screenshots
 
 ### Upload Interface
-![Upload Interface](docs/screenshots/upload.png)
+![Upload Interface](docs/upload.png)
 
 ### Results View
-![Results View](docs/screenshots/results.png)
+![Results View](docs/results.png)
 
 ## 🛠️ Complete Tech Stack (End-to-End)
 
@@ -304,7 +304,7 @@ If you have any questions or run into issues:
 
 - **Live Demo**: [https://web-production-4a424.up.railway.app/](https://web-production-4a424.up.railway.app/)
 - **GitHub Repository**: [https://github.com/mahmoud-aymann/blood_cell_prediction](https://github.com/mahmoud-aymann/blood_cell_prediction)
-- **Test Images**: Coming Soon (Google Drive)
+- **Test Images**: [Google Drive - Sample Blood Cell Images](https://drive.google.com/drive/folders/1wxwsKxpJz-O5fHqS5ROGDJ4tG6Ac5Hjq?usp=sharing)
 ---
 
 **This end-to-end project showcases complete mastery of the machine learning pipeline, from data collection to production deployment! 🚀**
