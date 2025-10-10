@@ -9,19 +9,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <img src="{{ url_for('static', filename='logo.svg') }}" alt="Blood Cell Diagnostics" class="logo-img">
-                    <span class="logo-text">Blood Cell Diagnostics</span>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">
+                <img class="logo-img" src="{{ url_for('static', filename='logo.svg') }}" alt="Blood Cell Diagnostics Logo" />
+                <div class="brand-text">
+                    <h1>Blood Cell Diagnostics</h1>
+                    <p>AI-powered hematology image classification</p>
                 </div>
-                <nav class="nav">
-                    <a href="{{ url_for('index') }}" class="nav-link">Home</a>
-                    <a href="{{ url_for('about') }}" class="nav-link active">About</a>
-                    <a href="mailto:mahmoudaymann153@gmail.com" class="contact-btn">Contact</a>
-                </nav>
             </div>
+            <nav class="top-nav">
+                <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+                <a href="{{ url_for('about') }}" class="nav-link active">About</a>
+                <a href="#privacy" class="nav-link">Privacy</a>
+                <a href="mailto:mahmoudaymann153@gmail.com" class="contact-link">Contact</a>
+            </nav>
         </div>
     </header>
 
