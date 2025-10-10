@@ -103,6 +103,11 @@ footer,.site-footer{margin-top:24px;color:var(--muted)}
 .spinning{animation:spin 1s linear infinite}
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 
+/* Result Page Styles */
+.result-header{margin:24px 0 32px 0;text-align:center}
+.result-title h2{font-size:2.5rem;font-weight:700;margin:0 0 8px 0;background:linear-gradient(135deg,var(--brand),var(--brand2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.result-title p{font-size:1.125rem;color:var(--muted);margin:0}
+
 /* Grid blocks */
 .grid-2{display:grid;grid-template-columns:1fr;gap:16px;margin-top:16px}
 @media(min-width:900px){.grid-2{grid-template-columns:1fr 1fr}}
@@ -882,6 +887,19 @@ footer,.site-footer{margin-top:24px;color:var(--muted)}
     .contact-method {
         width: 100%;
         justify-content: center;
+    }
+    
+    /* Result Page Mobile */
+    .result-header {
+        margin: 16px 0 24px 0;
+    }
+    
+    .result-title h2 {
+        font-size: 2rem;
+    }
+    
+    .result-title p {
+        font-size: 1rem;
     }
 }
 
