@@ -8,3 +8,13 @@ bloodcells_dataset/
 blood.ipynb
 venv/
 .env
+*.ipynb
+.ipynb_checkpoints/
+.vscode/
+.idea/
+node_modules/
+build/
+dist/
+docs/
+*.pth
+*.pt
