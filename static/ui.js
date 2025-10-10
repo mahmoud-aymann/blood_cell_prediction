@@ -31,12 +31,28 @@
     renderThumbs([file]);
   }
 
-  browseBtn.addEventListener('click', ()=> fileInput.click());
-  dropzone.addEventListener('click', ()=> fileInput.click());
-  dropzone.addEventListener('dragover', (e)=>{ e.preventDefault(); dropzone.classList.add('focus'); });
-  dropzone.addEventListener('dragleave', ()=> dropzone.classList.remove('focus'));
+  browseBtn.addEventListener('click', (e)=> {
+    e.preventDefault();
+    e.stopPropagation();
+    fileInput.click();
+  });
+  dropzone.addEventListener('click', (e)=> {
+    e.preventDefault();
+    fileInput.click();
+  });
+  dropzone.addEventListener('dragover', (e)=>{ 
+    e.preventDefault(); 
+    e.stopPropagation();
+    dropzone.classList.add('focus'); 
+  });
+  dropzone.addEventListener('dragleave', (e)=> {
+    e.preventDefault();
+    e.stopPropagation();
+    dropzone.classList.remove('focus'); 
+  });
   dropzone.addEventListener('drop', (e)=>{
     e.preventDefault();
+    e.stopPropagation();
     dropzone.classList.remove('focus');
     if(e.dataTransfer.files && e.dataTransfer.files[0]){
       fileInput.files = e.dataTransfer.files;
@@ -54,8 +70,11 @@
   // Disable UI while submitting and show spinner text
   const form = document.querySelector('form.uploader');
   if(form){
-    form.addEventListener('submit', ()=>{
-      if(submitting) return;
+    form.addEventListener('submit', (e)=>{
+      if(submitting) {
+        e.preventDefault();
+        return;
+      }
       submitting = true;
       submitBtn.disabled = true;
       submitBtn.textContent = 'Predicting…';
@@ -74,7 +93,8 @@
       el.className = 'thumb';
       el.title = f.name;
       el.innerHTML = `<img src="${url}" alt="${f.name}">`;
-      el.addEventListener('click', ()=>{
+      el.addEventListener('click', (e)=>{
+        e.preventDefault();
         // select this file as active
         fileInput.files = createFileList([f]);
         setFile(f);
@@ -91,8 +111,16 @@
 
   // Keyboard shortcuts
   document.addEventListener('keydown', (e)=>{
-    if(e.key === 'Enter' && !submitBtn.disabled){ form.requestSubmit(); }
-    if(e.key === 'Escape'){ fileInput.value = ''; submitBtn.disabled = true; preview.classList.add('hidden'); thumbs && (thumbs.innerHTML=''); }
+    if(e.key === 'Enter' && !submitBtn.disabled && !submitting){ 
+      e.preventDefault();
+      form.requestSubmit(); 
+    }
+    if(e.key === 'Escape'){ 
+      fileInput.value = ''; 
+      submitBtn.disabled = true; 
+      preview.classList.add('hidden'); 
+      thumbs && (thumbs.innerHTML=''); 
+    }
   });
 
   // Apply saved theme if present (no visible toggle)
