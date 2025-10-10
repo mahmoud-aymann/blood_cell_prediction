@@ -1,0 +1,10 @@
+.git
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+bloodcells_dataset/
+blood.ipynb
+venv/
+.env
