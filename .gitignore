@@ -1,1 +1,44 @@
-bloodcells_dataset/
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+.python-version
+.venv/
+venv/
+ENV/
+.env
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# OS / Editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Build artifacts
+build/
+dist/
+
+# Model files (keep out of git; upload to Railway separately)
+*.pth
+*.pt
+
+# Cache
+.cache/
+
+# Node (if any frontend tooling)
+node_modules/
+
+# Railway
+.nixpacks/
