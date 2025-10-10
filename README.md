@@ -250,7 +250,4 @@ If you have any questions or run into issues:
 
 ⭐ **Star this repository if you found it helpful!**
 # blood_cell_prediction
-#   b l o o d _ c e l l _ p r e d i c t i o n 
- 
- # blood_cell_prediction
-
+#
