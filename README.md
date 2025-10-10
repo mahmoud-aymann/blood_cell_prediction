@@ -44,14 +44,6 @@ Upload any blood smear image and get instant AI-powered classification results!
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/your-template-id)
 
-## 📸 Screenshots
-
-### Upload Interface
-![Upload Interface](docs/upload.png)
-
-### Results View
-![Results View](docs/results.png)
-
 ## 🛠️ Complete Tech Stack (End-to-End)
 
 ### **Data Processing**
@@ -310,3 +302,4 @@ If you have any questions or run into issues:
 **This end-to-end project showcases complete mastery of the machine learning pipeline, from data collection to production deployment! 🚀**
 
 #
+
