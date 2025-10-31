@@ -1,5 +1,5 @@
 # 🩸 Blood Cell Diagnostics
-###########
+
 > **Complete End-to-End AI Solution**: From raw blood cell images to production-ready web application with 95%+ accuracy
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Try%20Now-brightgreen.svg)](https://web-production-4a424.up.railway.app/)
@@ -302,6 +302,7 @@ If you have any questions or run into issues:
 **This end-to-end project showcases complete mastery of the machine learning pipeline, from data collection to production deployment! 🚀**
 
 #
+
 
 
 
